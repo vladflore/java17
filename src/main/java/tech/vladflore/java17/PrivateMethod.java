@@ -3,22 +3,30 @@ package tech.vladflore.java17;
 public class PrivateMethod {
 
     public static void main(String[] args) {
+        new InterfaceImpl().d();
+        Interface.s();
+        // new InterfaceImpl().p();
+        // Interface.ps();
+    }
+}
 
+interface Interface {
+
+    default void d() {
+        p();
     }
 
-    interface I1 {
-
-        default int m1() {
-            return sum(1, 2);
-        }
-
-        default int m2() {
-            return sum(2, 3);
-        }
-
-        private int sum(int a, int b) {
-            return a + b;
-        }
+    static void s() {
+        ps();
     }
+
+    private void p() {
+    }
+
+    private static void ps() {
+    }
+}
+
+class InterfaceImpl implements Interface {
 
 }

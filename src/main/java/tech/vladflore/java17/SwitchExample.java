@@ -5,12 +5,13 @@ import java.util.stream.Stream;
 public class SwitchExample {
 
     public static void main(String[] args) {
-        Stream.of(Houses.values()).map(SwitchExample::founder).forEach(System.out::println);
-        Stream.of(Houses.values()).map(SwitchExample::founder1).forEach(System.out::println);
-        Stream.of(Houses.values()).map(SwitchExample::founder2).forEach(System.out::println);
+        Stream.of(House.values()).map(SwitchExample::founder).forEach(System.out::println);
+        Stream.of(House.values()).map(SwitchExample::founder1).forEach(System.out::println);
+        Stream.of(House.values()).map(SwitchExample::founder2).forEach(System.out::println);
+        System.out.println(founder2(null));
     }
 
-    static String founder(Houses house) {
+    static String founder(House house) {
         var founder = "unknown";
         if (house == null) {
             return founder;
@@ -32,7 +33,7 @@ public class SwitchExample {
         return founder;
     }
 
-    static String founder1(Houses house) {
+    static String founder1(House house) {
         if (house == null) {
             return "unknown";
         }
@@ -49,22 +50,14 @@ public class SwitchExample {
         return "unknown";
     }
 
-    static String founder2(Houses house) {
+    static String founder2(House house) {
         return switch (house) {
-            case GRYFFINDOR -> {
-                String firstName = "Godric Gryffindor".split(" ")[0];
-                yield firstName;
-            }
+            case GRYFFINDOR -> "Godric Gryffindor";
             case HAFFLEPUFF -> "Helga Hufflepuff";
             case RAVENCLAW -> "Rowena Ravenclaw";
             case SLYTHERIN -> "Salazar Slytherin";
+            case null -> "not a house";
         };
     }
 }
 
-enum Houses {
-    GRYFFINDOR,
-    HAFFLEPUFF,
-    RAVENCLAW,
-    SLYTHERIN
-}
