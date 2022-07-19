@@ -1,4 +1,7 @@
+package tech.vladflore.java17;
+
 public abstract sealed class HogwartsHouse permits Gryffindor, Hafflepuff, Ravenclaw, Slytherin {
+
     public abstract String name();
 
     public abstract String colors();

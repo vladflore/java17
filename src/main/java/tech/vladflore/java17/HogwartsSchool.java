@@ -1,9 +1,12 @@
+package tech.vladflore.java17;
+
 import java.util.stream.Stream;
 
 public class HogwartsSchool {
+
     public static void main(String[] args) {
         Stream.of(new Gryffindor(), new Hafflepuff(), new Ravenclaw(), new Slytherin())
-                .map(HogwartsSchool::printDetails).forEach(System.out::println);
+            .map(HogwartsSchool::printDetails).forEach(System.out::println);
     }
 
     static String printDetails(HogwartsHouse house) {

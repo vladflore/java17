@@ -1,6 +1,9 @@
+package tech.vladflore.java17;
+
 import java.util.stream.Stream;
 
 public class SwitchExample {
+
     public static void main(String[] args) {
         Stream.of(Houses.values()).map(SwitchExample::founder).forEach(System.out::println);
         Stream.of(Houses.values()).map(SwitchExample::founder1).forEach(System.out::println);

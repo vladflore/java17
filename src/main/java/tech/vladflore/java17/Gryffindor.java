@@ -1,3 +1,5 @@
+package tech.vladflore.java17;
+
 public final class Gryffindor extends HogwartsHouse {
 
     @Override

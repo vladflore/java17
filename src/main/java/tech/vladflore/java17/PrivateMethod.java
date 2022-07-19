@@ -1,9 +1,13 @@
+package tech.vladflore.java17;
+
 public class PrivateMethod {
+
     public static void main(String[] args) {
 
     }
 
     interface I1 {
+
         default int m1() {
             return sum(1, 2);
         }
