@@ -6,6 +6,7 @@ public class PatternMatchingExample {
         Object obj = "Hello World";
         if (obj instanceof String) {
             String s = (String) obj;
+            System.out.println(s.length());
             // do something with s
         }
         if (obj instanceof String s) {
